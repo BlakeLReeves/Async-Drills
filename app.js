@@ -31,51 +31,53 @@
 
 // getWords();
 
-// function countdown(num, callback) {
-//     for (let i = num; i >= 1; i--) {
-//         setTimeout(() => {
-//             if (i === 1) {
-//                 return callback();
-//             }
-//         }, num * 1000);
-//     }
-// };
+function countdown(num, callback) {
+    setTimeout(() => {
+        console.log(num);
+        if (num > 1) {
+            num--;
+            countdown(num, callback);
+        } else {
+            callback();
+        }
+    }, 1000);
+};
 
-// function done() {
-//     console.log('Countdown complete!');
-// };
+function done() {
+    console.log('Countdown complete!');
+};
 
-// countdown(3, done);
+countdown(10, done);
 
 //Promises
 
-let globalVar = true;
+// let globalVar = true;
 
-let orderingChickenSandwhich = new Promise(function (resolve, reject) {
+// let orderingChickenSandwhich = new Promise(function (resolve, reject) {
 
-    if(globalVar != true) {
-        let food = {
-            sandwhich: 'chicken',
-            veggies: 'lettuce'
-        };
-        resolve(food);
-    } else {
-        let err = new Error('An error has occurred!');
-        reject(err);
-    }
+//     if(globalVar != true) {
+//         let food = {
+//             sandwhich: 'chicken',
+//             veggies: 'lettuce'
+//         };
+//         resolve(food);
+//     } else {
+//         let err = new Error('An error has occurred!');
+//         reject(err);
+//     }
 
-});
+// });
 
-function orderFood() {
-    orderingChickenSandwhich
-    .then(food => {
-        console.log(food);
-    }).catch(err => {
-        console.log(err);
-    });
-}
+// function orderFood() {
+//     orderingChickenSandwhich
+//     .then(food => {
+//         console.log(food);
+//     }).catch(err => {
+//         console.log(err);
+//     });
+// }
 
-orderFood();
+// orderFood();
 
 //Chaining Promises
 
