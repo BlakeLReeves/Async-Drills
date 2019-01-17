@@ -49,56 +49,56 @@
 
 //Promises
 
-// let gobalVar = true;
+let globalVar = true;
 
-// let orderingChickenSandwhich = new Promise(function (resolve, reject) {
+let orderingChickenSandwhich = new Promise(function (resolve, reject) {
 
-//     if(globalVar = true) {
-//         let food = {
-//             sandwhich: 'chicken',
-//             veggies: 'lettuce'
-//         };
-//         resolve(food);
-//     } else {
-//         let err = new Error('An error has occurred!');
-//         reject(err);
-//     }
+    if(globalVar != true) {
+        let food = {
+            sandwhich: 'chicken',
+            veggies: 'lettuce'
+        };
+        resolve(food);
+    } else {
+        let err = new Error('An error has occurred!');
+        reject(err);
+    }
 
-// });
+});
 
-// function orderFood() {
-//     orderingChickenSandwhich
-//     .then(food => {
-//         console.log(food);
-//     }).catch(err => {
-//         console.log(err);
-//     });
-// }
+function orderFood() {
+    orderingChickenSandwhich
+    .then(food => {
+        console.log(food);
+    }).catch(err => {
+        console.log(err);
+    });
+}
 
-// orderFood();
+orderFood();
 
 //Chaining Promises
 
-let multiplyNum = new Promise(function (resolve, reject) {
+// let multiplyNum = new Promise(function (resolve, reject) {
 
-    setTimeout(() => {
-        let num = 1
-        resolve(num);
-    }, 2000);
-})
-    .then((num) => {
-        console.log(num);
-        let num2 = num * 2;
-        return num2;
-    })
-    .then((num2) => {
-        console.log(num2);
-        let num3 = num2 * 4;
-        return num3;
-    })
-    .then((num3) => {
-        console.log(num3)
-        let num4 = num3 * 6;
-        console.log(num4);
-    });
+//     setTimeout(() => {
+//         let num = 1
+//         resolve(num);
+//     }, 2000);
+// })
+//     .then((num) => {
+//         console.log(num);
+//         let num2 = num * 2;
+//         return num2;
+//     })
+//     .then((num2) => {
+//         console.log(num2);
+//         let num3 = num2 * 4;
+//         return num3;
+//     })
+//     .then((num3) => {
+//         console.log(num3)
+//         let num4 = num3 * 6;
+//         console.log(num4);
+//     });
 
